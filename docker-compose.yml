@@ -1,0 +1,29 @@
+version: '3'
+services:
+  web:
+    build: ./client/
+    environment:
+      CHOKIDAR_USEPOLLING: "true"
+    ports:
+      - "3000:3000"
+
+    volumes:
+      - /app/node_modules
+      - ./client:/app/
+
+
+
+############### BACKEND SERVER ABANDON, THIS IS LEGACY, WE use firebase instead ###############
+#  server:
+#    build: ./server
+#
+#    environment:
+#      CHOKIDAR_USEPOLLING: "true"
+#    ports:
+#
+#      - "5000:5000"
+#    volumes:
+#      - /app/node_modules
+#      - ./server:/app/
+
+
